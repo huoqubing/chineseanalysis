@@ -1,0 +1,49 @@
+http://www.hankcs.com/nlp/hmm-and-segmentation-tagging-named-entity-recognition.html
+http://www.hankcs.com/ml/hidden-markov-model.html#h3-20
+http://www.hankcs.com/nlp/general-java-implementation-of-the-viterbi-algorithm.html
+http://www.hankcs.com/nlp/word2vec.html
+
+
+states = ('Rainy', 'Sunny')
+
+observations = ('walk', 'shop', 'clean')
+
+start_probability = {'Rainy': 0.6, 'Sunny': 0.4}
+
+transition_probability = {
+    'Rainy' : {'Rainy': 0.7, 'Sunny': 0.3},
+    'Sunny' : {'Rainy': 0.4, 'Sunny': 0.6},
+    }
+
+emission_probability = {
+    'Rainy' : {'walk': 0.1, 'shop': 0.4, 'clean': 0.5},
+    'Sunny' : {'walk': 0.6, 'shop': 0.3, 'clean': 0.1},
+}
+
+
+
+day1 walk
+	rainy * walk = 0.6*0.1 = 0.06
+	sunny * walk = 0.4*0.6 = 0.24
+
+day2 shop
+	rainy * shop
+			rainy-->rainy  0.06*0.7*0.4 = 0.0168
+			sunny-->rainy  0.24*0.4*0.4 = 0.0384
+
+	sunny * shop
+			rainy-->sunny 0.06*0.3*0.3 = 0.0054
+			sunny-->sunny 0.24*0.6*0.3 = 0.0432
+
+day3 clean
+	rainy * clean
+		rainy-->rainy 0.0384*0.7*0.5 = 0.01344
+		sunny-->rainy 0.0432*0.4*0.5 = 0.00864
+
+	sunny * clean
+		rainy-->sunny 0.0384*0.3*0.1 = 0.001152
+		sunny-->sunny 0.0432*0.6*0.1 = 0.002592
+
+
+
+
