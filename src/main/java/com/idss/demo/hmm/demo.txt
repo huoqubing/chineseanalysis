@@ -2,6 +2,7 @@ http://www.hankcs.com/nlp/hmm-and-segmentation-tagging-named-entity-recognition.
 http://www.hankcs.com/ml/hidden-markov-model.html#h3-20
 http://www.hankcs.com/nlp/general-java-implementation-of-the-viterbi-algorithm.html
 http://www.hankcs.com/nlp/word2vec.html
+hmm
 
 
 states = ('Rainy', 'Sunny')
